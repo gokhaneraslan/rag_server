@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from query_data import query_rag
 from ad_to_db import main_data
+import uvicorn
 
 import os
 
@@ -58,3 +59,7 @@ async def post_document(file: str = Body(...)):
 async def post_document(query: Query):
     result = query_rag(str(query))
     return result
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, log_level="info")
