@@ -1,0 +1,10 @@
+fastapi
+pydantic
+uvicorn
+
+pypdf
+transformers
+sentence-transformers
+sentencepiece
+langchain_community
+chromadb
